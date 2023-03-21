@@ -13,6 +13,9 @@ class BankStatement {
 
   print() {
     console.log("date || credit || debit || balance");
+    this.transactions.slice().reverse().forEach((t) => {
+      console.log(`${t.date.toLocaleDateString('en-GB')} || ${this.format_amount(t.credit)} || ${this.format_amount(t.debit)} || ${this.format_amount(t.balance)}`);
+    });
   }
 }
 
