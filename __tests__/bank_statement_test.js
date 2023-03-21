@@ -15,4 +15,18 @@ const BankStatement = require('../src/bank_statement.js');
        expect(statement.transactions).toEqual(transactions);
      });
    });
+
+   describe('format_amount', () => {
+    it('formats positive amounts to two decimal places', () => {
+      const statement = new BankStatement([]);
+      const formattedAmount = statement.format_amount(1000);
+      expect(formattedAmount).toEqual('1000.00');
+    });
+
+    it('returns an empty string for null amounts', () => {
+      const statement = new BankStatement([]);
+      const formattedAmount = statement.format_amount(null);
+      expect(formattedAmount).toEqual('');
+    });
+  });
  });

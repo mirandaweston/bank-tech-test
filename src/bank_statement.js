@@ -4,7 +4,11 @@ class BankStatement {
   }
 
   format_amount(amount) {
-
+    if (amount !== null) {
+      return amount.toFixed(2);
+    } else {
+      return '';
+    }
   }
 
   print() {
