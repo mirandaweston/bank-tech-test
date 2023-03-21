@@ -86,5 +86,55 @@ const BankAccount = require('../src/bank_account.js');
       account.withdraw(500);
       expect(account.balance).toBe(2500);
     });
+
+    it('withdraws money in one transaction and adds the new transaction to the transactions array', () => {
+      const account = new BankAccount();
+      account.balance = 3000;
+      const date = new Date('2023-01-14T00:00:00Z');
+
+      const dateSpy = jest.spyOn(global, 'Date').mockImplementation(() => date);
+      account.withdraw(500);
+
+      expect(account.transactions).toEqual([
+        {
+          date,
+          credit: null,
+          debit: 500,
+          balance: 2500,
+        },
+      ]);
+
+      dateSpy.mockRestore();
+    })
+
+    it('withdraws money in two transactions and adds the new transactions to the transactions array', () => {
+      const account = new BankAccount();
+      account.balance = 2000;
+      const dateOne = new Date('2023-03-20T00:00:00Z');
+      const dateTwo = new Date('2023-03-21T00:00:00Z');
+
+      const dateSpy = jest.spyOn(global, 'Date').mockImplementation(() => dateOne);
+      account.withdraw(1000);
+
+      dateSpy.mockImplementation(() => dateTwo);
+      account.withdraw(500);
+
+      expect(account.transactions).toEqual([
+        {
+          date: dateOne,
+          credit: null,
+          debit: 1000,
+          balance: 1000,
+        },
+        {
+          date: dateTwo,
+          credit: null,
+          debit: 500,
+          balance: 500,
+        },
+      ]);
+
+      dateSpy.mockRestore();
+    });
   });
  });
