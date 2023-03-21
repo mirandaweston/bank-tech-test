@@ -15,6 +15,7 @@ class BankAccount {
   }
 
   withdraw(amount) {
+    this.balance -= amount;
   }
 }
 

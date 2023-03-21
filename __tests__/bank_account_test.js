@@ -78,4 +78,13 @@ const BankAccount = require('../src/bank_account.js');
       dateSpy.mockRestore();
     });   
   });
+
+  describe('withdraw', () => {
+    it('withdraws money and subtracts it from the account balance', () => {
+      const account = new BankAccount();
+      account.balance = 3000;
+      account.withdraw(500);
+      expect(account.balance).toBe(2500);
+    });
+  });
  });
