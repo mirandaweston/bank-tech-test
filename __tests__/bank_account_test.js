@@ -6,5 +6,10 @@ const BankAccount = require('../src/bank_account.js');
        const account = new BankAccount();
        expect(account.balance).toBe(0);
      });
+
+     it('constructs with an empty array of transactions', () => {
+      const account = new BankAccount();
+      expect(account.transactions).toEqual([]);
+    });
    });
  });
