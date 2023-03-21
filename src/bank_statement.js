@@ -12,7 +12,7 @@ class BankStatement {
   }
 
   print() {
-
+    console.log("date || credit || debit || balance");
   }
 }
 

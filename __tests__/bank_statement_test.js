@@ -1,5 +1,5 @@
 const BankStatement = require('../src/bank_statement.js');
-
+const BankAccount = require('../src/bank_account.js');
 
  describe('BankStatement', () => {
    describe('constructor', () => {
@@ -27,6 +27,17 @@ const BankStatement = require('../src/bank_statement.js');
       const statement = new BankStatement([]);
       const formattedAmount = statement.format_amount(null);
       expect(formattedAmount).toEqual('');
+    });
+  });
+
+  describe('print', () => {
+    it('prints a statement with the correct headers', () => {
+      const account = new BankAccount();
+      const statement = new BankStatement(account.transactions);
+      const spy = jest.spyOn(console, 'log').mockImplementation();
+      statement.print();
+      expect(spy).toHaveBeenCalledWith('date || credit || debit || balance');
+      spy.mockRestore();
     });
   });
  });
