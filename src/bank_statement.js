@@ -1,6 +1,6 @@
 class BankStatement {
-  constructor() {
-
+  constructor(transactions) {
+    this.transactions = transactions;
   }
 
   format_amount(amount) {
