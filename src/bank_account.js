@@ -6,6 +6,12 @@ class BankAccount {
 
   deposit(amount) {
     this.balance += amount;
+    this.transactions.push({
+      date: new Date(),
+      credit: amount,
+      debit: null,
+      balance: this.balance
+    });
   }
 
   withdraw(amount) {
