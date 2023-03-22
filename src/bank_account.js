@@ -12,15 +12,11 @@ class BankAccount {
     this.transactions.push(transaction);
   }
 
-  // withdraw(amount) {
-  //   this.balance -= amount;
-  //   this.transactions.push({
-  //     date: new Date(),
-  //     credit: null,
-  //     debit: amount,
-  //     balance: this.balance
-  //   });
-  // }
+  withdraw(amount, transaction = new Transaction()) {
+    this.balance -= amount;
+    transaction.save(amount, this.balance, 'debit');
+    this.transactions.push(transaction);
+  }
 }
 
 module.exports = BankAccount;

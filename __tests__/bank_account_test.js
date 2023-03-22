@@ -39,4 +39,26 @@ describe('BankAccount', () => {
       expect(account.transactions[0]).toBe(transaction);
     });
   });
+
+  describe('withdraw', () => {
+    it('withdraws money and subtracts it from the account balance', () => {
+      account.deposit(1000)
+      account.withdraw(500);
+    expect(account.balance).toBe(500);
+    });
+
+    it('creates a new transaction with the correct type, amount, and balance', () => {
+      account.balance = 3000;
+      account.withdraw(500, transaction);
+      expect(transaction.type).toBe('debit');
+      expect(transaction.amount).toBe('500.00');
+      expect(transaction.balance).toBe('2500.00');
+    });
+
+    it('adds the new transaction to the transactions array', () => {
+      account.withdraw(500, transaction);
+      expect(account.transactions).toHaveLength(1);
+      expect(account.transactions[0]).toBe(transaction);
+    });
+  });
 });
