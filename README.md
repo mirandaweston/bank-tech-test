@@ -2,10 +2,10 @@
 
 ### This is a program allowing the user to input deposit amounts and withdrawal amounts. The program then returns a statement providing the date of transaction, amount deposited or withdrawn, and account balance.
 
-The original specificaion for this tech test can be found here[https://github.com/makersacademy/course/blob/main/individual_challenges/bank_tech_test.md].
+The original specificaion for this tech test can be found [here](https://github.com/makersacademy/course/blob/main/individual_challenges/bank_tech_test.md).
 
 
-## 1. My approach
+## 1. Approach
 
 My priority for this program was to write clean, readable, reusable code. I followed a TDD approach from the start, writing behaviour-driven tests before the code itself. This program evolved from two classes to three as I chose to create the Transaction class, using dependency injection to ensure separation of concerns. Once all tests were passing and the program was functional, I then began refactoring the classes and test suites to uphold the DRY principle.
 
@@ -31,7 +31,7 @@ npm install
 
 ```
 
-## 3. Running the program
+## 3. Run
 
 In order to run the program, navigate to the src directory by running `cd src` and then run `node` to enter Node.js.
 
@@ -64,7 +64,7 @@ date || credit || debit || balance
 
 ```
 
-## 4. Running the tests using Jest
+## 4. Testing
 
 _Run the following command to ensure you are in the right directory:_
 
