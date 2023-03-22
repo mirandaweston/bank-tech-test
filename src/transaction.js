@@ -1,6 +1,9 @@
 class Transaction {
   constructor() {
-
+    this.date = '';
+    this.type = '';
+    this.amount = '';
+    this.balance = '';
   }
 
   timestamp() {
@@ -11,9 +14,16 @@ class Transaction {
     return `${day}/${month}/${year}`;
   }
 
-  save() {
-
-  }
+  save(amount, balance, type) {
+    this.type = type;
+    this.amount = amount.toFixed(2);
+    if (type === 'deposit') {
+      this.balance = (balance + amount).toFixed(2);
+    } else if (type === 'withdrawal') {
+      this.balance = (balance - amount).toFixed(2);
+    }
+    this.date = this.timestamp();
+  }  
 }
 
 module.exports = Transaction;
