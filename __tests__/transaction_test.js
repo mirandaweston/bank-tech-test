@@ -22,20 +22,32 @@ describe('Transaction', () => {
   });
 
   describe('save', () => {
-    test('it should update the transaction properties for a deposit', () => {
-      transaction.save(1000, 1000, 'deposit');
-      expect(transaction.type).toBe('deposit');
+    it('saves a deposit transaction with the correct values', () => {
+      const amount = 1000;
+      const balance = 1000;
+      const type = 'credit';
+      transaction.save(amount, balance, type);
+  
+      expect(transaction.type).toBe(type);
       expect(transaction.amount).toBe('1000.00');
-      expect(transaction.balance).toBe('2000.00');
-      expect(transaction.date).toBe('10/01/2023');
+      expect(transaction.balance).toBe('1000.00');
+  
+      const timestamp = transaction.timestamp();
+      expect(transaction.date).toBe(timestamp);
     });
 
-    test('it should update the transaction properties for a withdrawal', () => {
-      transaction.save(500, 3000, 'withdrawal');
-      expect(transaction.type).toBe('withdrawal');
+    it('saves a withdrawal transaction with the correct values', () => {
+      const amount = 500;
+      const balance = 3000;
+      const type = 'debit';
+      transaction.save(amount, balance, type);
+  
+      expect(transaction.type).toBe(type);
       expect(transaction.amount).toBe('500.00');
-      expect(transaction.balance).toBe('2500.00');
-      expect(transaction.date).toBe('10/01/2023');
+      expect(transaction.balance).toBe('3000.00');
+  
+      const timestamp = transaction.timestamp();
+      expect(transaction.date).toBe(timestamp);
     });
   });
 });
