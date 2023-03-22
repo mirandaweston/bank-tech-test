@@ -51,7 +51,7 @@ const BankAccount = require('../src/bank_account.js');
       statement.print();
 
       expect(spy).toHaveBeenCalledWith('date || credit || debit || balance');
-      expect(spy).toHaveBeenCalledWith('10/01/2023 || 1000.00 ||  || 1000.00');
+      expect(spy).toHaveBeenCalledWith('10/01/2023 || 1000.00 || || 1000.00');
       spy.mockRestore();
       dateSpy.mockRestore();
     })
@@ -72,8 +72,8 @@ const BankAccount = require('../src/bank_account.js');
       statement.print();
 
       expect(spy).toHaveBeenCalledWith('date || credit || debit || balance');
-      expect(spy).toHaveBeenCalledWith('13/01/2023 || 2000.00 ||  || 3000.00');
-      expect(spy).toHaveBeenCalledWith('10/01/2023 || 1000.00 ||  || 1000.00');
+      expect(spy).toHaveBeenCalledWith('13/01/2023 || 2000.00 || || 3000.00');
+      expect(spy).toHaveBeenCalledWith('10/01/2023 || 1000.00 || || 1000.00');
       spy.mockRestore();
       dateSpy.mockRestore();
     })
@@ -98,9 +98,9 @@ const BankAccount = require('../src/bank_account.js');
       statement.print();
 
       expect(spy).toHaveBeenCalledWith('date || credit || debit || balance');
-      expect(spy).toHaveBeenCalledWith('14/01/2023 ||  || 500.00 || 2500.00');
-      expect(spy).toHaveBeenCalledWith('13/01/2023 || 2000.00 ||  || 3000.00');
-      expect(spy).toHaveBeenCalledWith('10/01/2023 || 1000.00 ||  || 1000.00');
+      expect(spy).toHaveBeenCalledWith('14/01/2023 || || 500.00 || 2500.00');
+      expect(spy).toHaveBeenCalledWith('13/01/2023 || 2000.00 || || 3000.00');
+      expect(spy).toHaveBeenCalledWith('10/01/2023 || 1000.00 || || 1000.00');
       spy.mockRestore();
       dateSpy.mockRestore();
     })

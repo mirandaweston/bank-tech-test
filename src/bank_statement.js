@@ -10,13 +10,25 @@ class BankStatement {
       return '';
     }
   }
-
+  
   print() {
     console.log("date || credit || debit || balance");
-    this.transactions.slice().reverse().forEach((t) => {
-      console.log(`${t.date.toLocaleDateString('en-GB')} || ${this.format_amount(t.credit)} || ${this.format_amount(t.debit)} || ${this.format_amount(t.balance)}`);
-    });
+  
+    const reversedTransactions = this.transactions.slice().reverse();
+  
+    for (const transaction of reversedTransactions) {
+
+      const credit = transaction.credit ? this.format_amount(transaction.credit) : '';
+      const debit = transaction.debit ? this.format_amount(transaction.debit) : '';
+  
+      const creditSpace = credit === '' || debit === null ? '' : ' ';
+      const debitSpace = debit === '' || credit === null ? '' : ' ';
+  
+      console.log(`${transaction.date.toLocaleDateString('en-GB')} ||${credit ? ` ${credit} ` : ' '}||${debit ? ` ${debit} ` : ' '}|| ${this.format_amount(transaction.balance)}`);
+    }
   }
+  
+  
 }
 
 
