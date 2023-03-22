@@ -2,7 +2,7 @@
 
 ### This is a program allowing the user to input deposit amounts and withdrawal amounts. The program then returns a statement providing the date of transaction, amount deposited or withdrawn, and account balance.
 
-The original specificaion for this tech test can be found [here](https://github.com/makersacademy/course/blob/main/individual_challenges/bank_tech_test.md).
+The original specification for this tech test can be found [here](https://github.com/makersacademy/course/blob/main/individual_challenges/bank_tech_test.md).
 
 
 ## 1. Approach
