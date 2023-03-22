@@ -88,3 +88,8 @@ To run the test suite for the BankStatement class only:
 ```javascript
 npm test bank_statement_test.js
 ```
+
+## 5. Test coverage: 100%
+
+<img width="604" alt="Screenshot 2023-03-22 at 17 10 00" src="https://user-images.githubusercontent.com/117643324/226985311-01d96890-8405-4ce7-bc4a-6ed68f8d0b28.png">
+
