@@ -4,7 +4,6 @@
 
 The original specification for this tech test can be found [here](https://github.com/makersacademy/course/blob/main/individual_challenges/bank_tech_test.md).
 
-
 ## 1. Approach
 
 My priority for this program was to write clean, readable, reusable code. I followed a TDD approach from the start, writing behaviour-driven tests before the code itself. This program evolved from two classes to three as I chose to create the Transaction class, using dependency injection to ensure separation of concerns. Once all tests were passing and the program was functional, I then began refactoring the classes and test suites to uphold the DRY principle.
@@ -23,6 +22,7 @@ _First, clone this repo by running the command below in terminal._
 git clone https://github.com/mirandaweston/bank-tech-test.git
 
 ```
+
 _Then, you will need to install Node.js dependencies by running the following command._
 
 ```javascript
@@ -72,7 +72,8 @@ _Run the following command to ensure you are in the right directory:_
 cd bank-tech-test
 
 ```
-To run both the BankAccount and BankStatement test suites at the same time:
+
+To run all test suites:
 
 ```javascript
 npm test
@@ -83,12 +84,15 @@ To run the test suite for the BankAccount class only:
 ```javascript
 npm test bank_account_test.js
 ```
+
 To run the test suite for the BankStatement class only:
 
 ```javascript
 npm test bank_statement_test.js
 ```
+
 To run the test suite for the Transaction class only:
+
 ```javascript
 npm test transaction_test.js
 ```
@@ -96,4 +100,3 @@ npm test transaction_test.js
 ## 5. Test coverage: 100%
 
 <img width="604" alt="Screenshot 2023-03-22 at 17 10 00" src="https://user-images.githubusercontent.com/117643324/226985311-01d96890-8405-4ce7-bc4a-6ed68f8d0b28.png">
-
