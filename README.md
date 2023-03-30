@@ -88,6 +88,10 @@ To run the test suite for the BankStatement class only:
 ```javascript
 npm test bank_statement_test.js
 ```
+To run the test suite for the Transaction class only:
+```javascript
+npm test transaction_test.js
+```
 
 ## 5. Test coverage: 100%
 
